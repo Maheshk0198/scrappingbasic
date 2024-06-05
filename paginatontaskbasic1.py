@@ -15,3 +15,5 @@ with open('teamgoallist.txt', 'w') as file:
             teamgoal = tabledata.find_next('td', class_='gf').text.strip()
             teamgoallist.append(teamname + '-' + teamgoal)
             file.write(teamname + '-' + teamgoal + '\n')
+df = pd.DataFrame({'Team Name':teamnames,'Team Goals':teamgoals})
+df.to_csv('teamgoals.csv',index=True)
